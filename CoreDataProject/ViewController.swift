@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         setupTableView()
         title = "The list"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewName(sender:)))
-
     }
     
     func setupTableView() {
@@ -85,13 +84,7 @@ class ViewController: UIViewController {
     }
 }
 
-
-
-
-extension ViewController: UITableViewDelegate {
-}
-
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return people.count
     }
